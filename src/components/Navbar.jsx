@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
   return (
-    <header className="bg-blue-900 text-white shadow-lg fixed top-0 left-0 right-0 w-full z-50">
+    <header className="bg-blue-950 text-white shadow-lg fixed top-0 left-0 right-0 w-full z-50">
       <nav className="flex items-center justify-between h-[60px] px-5 md:px-10">
         <img
           src={logo}
@@ -120,3 +120,8 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+

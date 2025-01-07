@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Card = ({ skillsName, text, buttonColor ,icons}) => {
   return (
-    <div className="bg-gray-900 group  text-white flex flex-col justify-between items-center shadow w-[100%] md:w-[100%] rounded-lg p-4 transition-all ease-in-out duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-lg">
+    <div className=" bg-blue-950 group  text-white flex flex-col justify-between items-center shadow w-[100%] md:w-[100%] rounded-lg p-4 transition-all ease-in-out duration-300 hover:bg-blue-900 hover:scale-105 hover:shadow-lg">
       <div className="flex justify-center items-center gap-5 w-full mb-4">
        {icons}
         <span className="text-lg font-semibold">{skillsName}</span>

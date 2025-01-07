@@ -2,7 +2,7 @@ const About = () => {
   return (
     <main
       id="about"
-      className="bg-gradient-to-r from-gray-100 to-gray-400 text-center p-8 mt-14 
+      className="bg-gradient-to-r from-gray-100 to-gray-600 text-center p-8 mt-14 
       flex justify-center h-[100vh] items-center relative"
     >
       <section
@@ -37,6 +37,7 @@ const About = () => {
           </svg>
         </div>
         <p className="text-lg md:text-xl text-blue-700 leading-relaxed">
+          
           I’m a passionate coder with a focus on building efficient, scalable, and reusable
           React components. I love working on the front-end, creating interactive and dynamic web
           applications using modern design principles. My goal is to develop solutions that not only
