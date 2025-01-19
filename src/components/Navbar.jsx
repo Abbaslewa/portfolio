@@ -1,44 +1,34 @@
 import { useState } from 'react';
-import logo from '../assets/logo.svg';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { AiFillCode } from 'react-icons/ai';
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-blue-950 text-white shadow-lg fixed top-0 left-0 right-0 w-full z-50">
-      <nav className="flex items-center justify-between h-[60px] px-5 md:px-10">
-        <img
-          src={logo}
-          alt="logo"
-          className="w-[150px] h-auto object-contain rounded-full"
-        />
+    <header className="bg-blue-950 text-white shadow-[0_4px_10px_rgba(0,0,0,0.4)] fixed top-0 left-0 right-0 w-full z-50">
+      <nav className="flex items-center justify-between h-[70px] px-5 md:px-10">
+        
+        <div className="text-2xl font-bold flex items-center space-x-2">
+          <AiFillCode className="text-green-400" /> 
+          <a href="#home" className="text-white hover:text-green-400">
+            (A)
+          </a>
+        </div>
 
         <div className="md:hidden">
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)} 
-            className="text-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-white focus:outline-none"
+          >
+            {isMenuOpen ? (
+              <FaTimes className="text-2xl" />
+            ) : (
+              <FaBars className="text-2xl" />
+            )}
           </button>
         </div>
 
-        
         <ul className="hidden md:flex space-x-6 md:space-x-12 text-lg">
           <li>
             <a
@@ -72,16 +62,20 @@ const Navbar = () => {
               CONTACT ME
             </a>
           </li>
+         
+          <li>
+        
+          </li>
         </ul>
       </nav>
 
       {isMenuOpen && (
-        <ul className="flex flex-col items-center bg-blue-900 absolute top-[60px] left-0 right-0 py-4 space-y-4 md:hidden">
+        <ul className="flex flex-col items-center bg-blue-900 absolute top-[70px] left-0 right-0 py-4 space-y-4 shadow-[0_8px_20px_rgba(0,0,0,0.4)] md:hidden">
           <li>
             <a
               href="#home"
               className="hover:text-red-500 transition-all duration-300 ease-in-out"
-              onClick={() => setIsMenuOpen(false)} 
+              onClick={() => setIsMenuOpen(false)}
             >
               HOME
             </a>
@@ -90,7 +84,7 @@ const Navbar = () => {
             <a
               href="#about"
               className="hover:text-red-500 transition-all duration-300 ease-in-out"
-              onClick={() => setIsMenuOpen(false)} 
+              onClick={() => setIsMenuOpen(false)}
             >
               ABOUT ME
             </a>
@@ -99,7 +93,7 @@ const Navbar = () => {
             <a
               href="#skills"
               className="hover:text-red-500 transition-all duration-300 ease-in-out"
-              onClick={() => setIsMenuOpen(false)} 
+              onClick={() => setIsMenuOpen(false)}
             >
               SKILLS
             </a>
@@ -108,10 +102,14 @@ const Navbar = () => {
             <a
               href="#contact"
               className="hover:text-red-500 transition-all duration-300 ease-in-out"
-              onClick={() => setIsMenuOpen(false)} 
+              onClick={() => setIsMenuOpen(false)}
             >
               CONTACT ME
             </a>
+          </li>
+       
+          <li>
+        
           </li>
         </ul>
       )}
@@ -120,8 +118,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-
