@@ -1,56 +1,43 @@
-import gog from "../assets/gog.jpeg";
+import AbbasImage from '../assets/Abbas.jpeg';
 
 const AboutMe = () => {
   return (
-    <section
-      id="about"
-      className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white py-20 px-5 md:px-10 lg:px-20"
-    >
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-10 md:mb-14 animate__animated animate__fadeIn">
-          About Me
+    <section id="about" className="w-full py-12 bg-gray-700 h-auto lg:h-[100vh]">
+      <div className="container mx-auto px-6 lg:px-12">
+        <h2 className="text-3xl sm:text-4xl text-center mt-7 font-bold text-white mb-8">
+          About <span className="text-yellow-500">Me</span>
         </h2>
 
-        {/* Navigation Links for Experience and Education */}
-        <div className="text-center mb-10 animate__animated animate__fadeIn animate__delay-1s">
-          <a
-            href="#education"
-            className="text-xl font-semibold text-blue-400 hover:text-yellow-300 mx-4"
-          >
-            Education
-          </a>
-          <a
-            href="#experience"
-            className="text-xl font-semibold text-blue-400 hover:text-yellow-300 mx-4"
-          >
-            Experience
-          </a>
-        </div>
-
-        <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12 lg:space-x-16">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 flex-shrink-0">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 to-purple-700 p-2 lg:p-4 animate-pulse">
+        <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
+          
+          <div className="flex flex-col items-center bg-gray-800 text-center rounded-lg shadow-lg w-full md:w-1/4 p-6">
+            <div className="w-48 sm:w-64 h-48 sm:h-64 rounded-full overflow-hidden border-4 border-white bg-black mb-6">
               <img
-                src={gog}
-                alt="About me"
-                className="w-full h-full object-cover rounded-full shadow-xl transform hover:scale-105 transition-all duration-500 ease-in-out animate__animated animate__zoomIn"
+                src={AbbasImage}
+                alt="Abbas Omer Hassan Suliman"
+                className="h-full object-cover w-full"
               />
             </div>
+            <h3 className="text-white text-2xl sm:text-3xl font-bold mt-4">Abbas Omer Hassan Suliman</h3>
+            <p className="text-white mt-2">Full-Stack Developer</p>
+            <p className="text-white">Frontend Specialist</p>
+            <p className="text-white">Backend Developer</p>
           </div>
 
-          <div className="md:w-3/5 lg:w-1/2 text-center md:text-left space-y-6 animate__animated animate__fadeIn animate__delay-1.5s">
-            <p className="text-lg lg:text-xl leading-relaxed transform hover:scale-105 hover:text-green-400 transition-all duration-300 animate__animated animate__fadeIn animate__delay-2s">
-              Hi there! I’m <span className="font-bold text-blue-400">Abbas Lewa</span>, a passionate front-end developer specializing in creating captivating and responsive user experiences. With extensive experience in React, TailwindCSS, and modern web technologies, I bring designs to life with elegant and scalable code.
-            </p>
-            <p className="text-lg lg:text-xl leading-relaxed transform hover:scale-105 transition-all duration-300 animate__animated animate__fadeIn animate__delay-2.5s">
-              I’m constantly learning and exploring new trends in the tech world. When I'm not coding, I enjoy contributing to open-source projects, experimenting with new tools, and discovering cutting-edge design patterns.
-            </p>
-            <a
-              href="#contact"
-              className="inline-block bg-gradient-to-r from-green-600 to-teal-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-2xl hover:from-green-700 hover:to-teal-600 transition-all duration-300 ease-in-out transform hover:-translate-y-1 animate__animated animate__fadeIn animate__delay-3s"
-            >
-              Get in Touch
-            </a>
+          <div className="flex flex-col w-full md:w-2/3 bg-gray-800 p-6 sm:p-12 rounded-lg shadow-lg">
+            <div className="flex justify-center md:justify-start space-x-4 border-b border-gray-600 pb-4 mb-4">
+              <a href="/education" className="text-yellow-500 font-semibold hover:underline">Education</a>
+              <a href="#experience" className="text-white hover:text-yellow-500 hover:underline">My project</a>
+            </div>
+
+            <div id="education" className="text-white">
+              <p className="leading-relaxed text-base sm:text-lg mb-6 text-gray-300">
+                Hi, I'm Abbas Omer Hassan Suliman, a passionate Full-Stack Developer from Sudan. With a strong focus on building dynamic and responsive web applications, I specialize in front-end development using React and TailwindCSS, while also working with back-end technologies like Node.js and MongoDB.
+              </p>
+              <p className="leading-relaxed text-base sm:text-lg mb-6 text-gray-300">
+                I'm driven by the challenge of solving complex problems through code and always seek to learn new technologies and improve my skills. I love contributing to open-source projects and experimenting with cutting-edge design patterns. My goal is to create engaging user experiences and seamless interactions across all platforms.
+              </p>
+            </div>
           </div>
         </div>
       </div>

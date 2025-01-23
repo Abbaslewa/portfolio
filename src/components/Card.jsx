@@ -1,32 +1,24 @@
-import PropTypes from 'prop-types';
-
-const Card = ({ skillsName, text, buttonColor, icons }) => {
+const SkillCard = ({ name, icon, progress }) => {
   return (
-    <div
-      className="bg-blue-950 group text-white flex flex-col justify-between items-center shadow-md w-full md:w-full rounded-lg p-6 transition-all ease-in-out duration-300 transform hover:bg-blue-900 hover:scale-105 hover:shadow-lg hover:opacity-90 animation-backgroundChange"
-    >
-      <div className="flex justify-center items-center gap-4 w-full mb-4">
-        {icons}
-        <span className="text-xl font-semibold">{skillsName}</span>
+    <div id="skills" className="border p-5 rounded-lg shadow-md bg-gray-900 max-w-lg transition duration-300 hover:shadow-lg">
+      <div className="flex items-center mb-2">
+        <div className="w-12 h-12 mr-4 transform transition-transform duration-300 hover:scale-125 hover:text-yellow-500">
+          {icon} 
+        </div>
+        <h2 className="text-xl font-bold text-white">{name}</h2>
       </div>
-      <button
-        className={`rounded-lg text-white p-3 transition-all ease-in-out duration-300 border-2 ${buttonColor} hover:scale-105 hover:opacity-80`}
-      >
-        {text}
-      </button>
+
+      <div>
+        <p className="text-gray-200 mb-1">Progress: {progress}%</p>
+        <div className="bg-gray-300 h-2 w-full rounded">
+          <div
+            className="bg-yellow-500 h-2 rounded"
+            style={{ width: `${progress}%` }}
+          ></div>
+        </div>
+      </div>
     </div>
   );
 };
 
-Card.propTypes = {
-  skillsName: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  buttonColor: PropTypes.string,
-  icons: PropTypes.node,
-};
-
-Card.defaultProps = {
-  buttonColor: 'bg-fuchsia-500 hover:bg-pink-300',
-};
-
-export default Card;
+export default SkillCard;

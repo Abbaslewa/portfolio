@@ -1,39 +1,38 @@
-import { Code, FileCode, GitBranch, Figma, Atom } from 'lucide-react';
 import Card from '../components/Card';
-import { FaHtml5, FaCss3 } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaReact, FaJsSquare, FaFigma, FaMobileAlt, FaGithub } from 'react-icons/fa';
+import { SiTailwindcss, SiAdobe, SiMongodb, SiNodedotjs, SiMysql } from 'react-icons/si'; 
 
-const Skills = () => {
-  const skillss = [
-    { skillsName: 'JavaScript', text: 'Advanced', buttonColor: 'bg-blue-500 hover:bg-blue-900', icons: <FileCode className='group-hover:text-red-500 transition-all transform duration-300 scale-100 hover:scale-110' /> }, 
-    { skillsName: 'React', text: 'Intermediate', buttonColor: 'bg-yellow-500 hover:bg-yellow-900', icons: <Atom className='group-hover:text-red-500 transition-all transform duration-300 scale-100 hover:scale-110' /> },
-    { skillsName: 'HTML', text: 'Advanced', buttonColor: 'bg-pink-500 hover:bg-pink-700', icons: <FaHtml5 className='group-hover:text-red-500 transition-all transform duration-300 scale-100 hover:scale-110' /> },
-    { skillsName: 'CSS', text: 'Intermediate', buttonColor: 'bg-green-500 hover:bg-green-800', icons: <FaCss3 className='group-hover:text-red-500 transition-all transform duration-300 scale-100 hover:scale-110' /> },
-    { skillsName: 'PHP', text: 'Beginner', buttonColor: 'bg-indigo-500 hover:bg-indigo-800', icons: <Atom className='group-hover:text-red-500 transition-all transform duration-300 scale-100 hover:scale-110' /> },
-    { skillsName: 'Git', text: 'Advanced', buttonColor: 'bg-purple-500 hover:bg-purple-300', icons: <GitBranch className='group-hover:text-red-500 transition-all transform duration-300 scale-100 hover:scale-110' /> },
-    { skillsName: 'TailwindCSS', text: 'Intermediate', buttonColor: 'bg-teal-500 hover:bg-teal-900', icons: <Code className='group-hover:text-red-500 transition-all transform duration-300 scale-100 hover:scale-110' /> },
-    { skillsName: 'Figma', text: 'Advanced', buttonColor: 'bg-orange-500 hover:bg-orange-800', icons: <Figma className='group-hover:text-red-500 transition-all transform duration-300 scale-100 hover:scale-110' /> },
+const SkillsDisplay = () => {
+  const skills = [
+    { name: 'HTML 5', icon: <FaHtml5 size={20} className="text-orange-600 transition-transform duration-300 hover:scale-125 hover:text-yellow-400" />, progress: 90 },
+    { name: 'CSS 3', icon: <FaCss3Alt size={20} className="text-blue-600 transition-transform duration-300 hover:scale-125 hover:text-blue-400" />, progress: 80 },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss size={20} className="text-blue-400 transition-transform duration-300 hover:scale-125 hover:text-teal-400" />, progress: 80 },
+    { name: 'React', icon: <FaReact size={20} className="text-blue-300 transition-transform duration-300 hover:scale-125 hover:text-cyan-400" />, progress: 60 },
+    { name: 'JavaScript', icon: <FaJsSquare size={20} className="text-yellow-400 transition-transform duration-300 hover:scale-125 hover:text-yellow-300" />, progress: 60 },
+    { name: 'Figma', icon: <FaFigma size={20} className="text-pink-600 transition-transform duration-300 hover:scale-125 hover:text-pink-500" />, progress: 90 },
+    { name: 'Adobe Photoshop', icon: <SiAdobe size={20} className="text-red-500 transition-transform duration-300 hover:scale-125 hover:text-red-400" />, progress: 60 },
+    { name: 'Node.js', icon: <SiNodedotjs size={20} className="text-green-600 transition-transform duration-300 hover:scale-125 hover:text-green-500" />, progress: 60 }, 
+    { name: 'MongoDB', icon: <SiMongodb size={20} className="text-green-500 transition-transform duration-300 hover:scale-125 hover:text-green-400" />, progress: 40 },  
+    { name: 'Database', icon: <SiMysql size={20} className="text-blue-500 transition-transform duration-300 hover:scale-125 hover:text-blue-400" />, progress: 30 },    
+    { name: 'Mobile Development', icon: <FaMobileAlt size={20} className="text-purple-600 transition-transform duration-300 hover:scale-125 hover:text-purple-500" />, progress: 50 },
+    { name: 'GitHub', icon: <FaGithub size={20} className="text-black transition-transform duration-300 hover:scale-125 hover:text-gray-700" />, progress: 85 }, 
   ];
 
-  const Skillslist = skillss.map((skill, index) => (
-    <Card
-      key={index}
-      skillsName={skill.skillsName}
-      text={skill.text}
-      buttonColor={skill.buttonColor}
-      icons={skill.icons}
-    />
-  ));
-
   return (
-    <div id="skills" className="min-h-screen py-10 bg-gradient-to-r from-gray-900 via-blue-900 to-black">
-      <div className="md:w-[90%] mx-auto p-20 rounded-lg bg-gray-500 shadow-lg shadow-gray-700">
-        <h2 className="text-5xl text-center text-white font-bold mb-10 animate-fadeIn">My Skills</h2>
-        <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-6">
-          {Skillslist}
-        </div>
+    <div id="skills" className="bg-gray-700 min-h-screen p-6 sm:p-12 lg:p-20 flex justify-center items-center">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl w-full">
+        {skills.map((skill, index) => (
+          <Card
+            key={index}
+            name={skill.name}
+            icon={skill.icon}
+            progress={skill.progress}
+            className="text-sm"
+          />
+        ))}
       </div>
     </div>
   );
 };
 
-export default Skills;
+export default SkillsDisplay;

@@ -5,7 +5,7 @@ import { faFacebook, faTiktok, faGithub, faWhatsapp, faLinkedin } from '@fortawe
 
 const ContactMe = () => {
   return (
-    <div id="contact" className="relative min-h-screen flex flex-col sm:flex-row justify-center items-center bg-gray-900 overflow-hidden py-10 sm:py-0">
+    <div id="contact" className="relative min-h-screen flex flex-col sm:flex-row justify-center items-center bg-gray-700 overflow-hidden py-10 sm:py-0">
      
       <div className="relative w-full sm:w-1/2 h-full flex flex-col justify-center items-center space-y-4">
         <div className="relative w-[90%] sm:w-[80%] lg:w-[70%]">
@@ -66,7 +66,7 @@ const ContactMe = () => {
             className="p-3 sm:p-4 h-28 sm:h-32 rounded-lg outline-none focus:ring-4 focus:ring-green-500 border-[1px] border-gray-600 bg-white/20 text-white placeholder-gray-300 transition-all duration-300 ease-in-out"
           ></textarea>
 
-          <button className="bg-gradient-to-r from-green-500 to-blue-500 text-white p-3 sm:p-4 rounded-lg w-full text-base sm:text-lg font-semibold hover:from-green-400 hover:to-blue-400 transition-colors duration-300 ease-in-out focus:ring-4 focus:ring-green-600 shadow-lg hover:shadow-xl hover:shadow-green-500/50">
+          <button className="bg-gradient-to-r from-blue-950 to-blue-900 text-white p-3 sm:p-4 rounded-lg w-full text-base sm:text-lg font-semibold hover:from-blue-950 hover:to-blue-600 transition-colors duration-300 ease-in-out focus:ring-4 focus:ring-green-600 shadow-lg hover:shadow-xl hover:shadow-green-500/50">
             Submit
           </button>
 
