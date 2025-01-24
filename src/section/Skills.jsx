@@ -4,18 +4,18 @@ import { SiTailwindcss, SiAdobe, SiMongodb, SiNodedotjs, SiMysql } from 'react-i
 
 const SkillsDisplay = () => {
   const skills = [
-    { name: 'HTML 5', icon: <FaHtml5 size={20} className="text-orange-600 transition-transform duration-300 hover:scale-125 hover:text-yellow-400" />, progress: 90 },
-    { name: 'CSS 3', icon: <FaCss3Alt size={20} className="text-blue-600 transition-transform duration-300 hover:scale-125 hover:text-blue-400" />, progress: 80 },
-    { name: 'Tailwind CSS', icon: <SiTailwindcss size={20} className="text-blue-400 transition-transform duration-300 hover:scale-125 hover:text-teal-400" />, progress: 80 },
-    { name: 'React', icon: <FaReact size={20} className="text-blue-300 transition-transform duration-300 hover:scale-125 hover:text-cyan-400" />, progress: 60 },
-    { name: 'JavaScript', icon: <FaJsSquare size={20} className="text-yellow-400 transition-transform duration-300 hover:scale-125 hover:text-yellow-300" />, progress: 60 },
-    { name: 'Figma', icon: <FaFigma size={20} className="text-pink-600 transition-transform duration-300 hover:scale-125 hover:text-pink-500" />, progress: 90 },
-    { name: 'Adobe Photoshop', icon: <SiAdobe size={20} className="text-red-500 transition-transform duration-300 hover:scale-125 hover:text-red-400" />, progress: 60 },
-    { name: 'Node.js', icon: <SiNodedotjs size={20} className="text-green-600 transition-transform duration-300 hover:scale-125 hover:text-green-500" />, progress: 60 }, 
-    { name: 'MongoDB', icon: <SiMongodb size={20} className="text-green-500 transition-transform duration-300 hover:scale-125 hover:text-green-400" />, progress: 40 },  
-    { name: 'Database', icon: <SiMysql size={20} className="text-blue-500 transition-transform duration-300 hover:scale-125 hover:text-blue-400" />, progress: 30 },    
-    { name: 'Mobile Development', icon: <FaMobileAlt size={20} className="text-purple-600 transition-transform duration-300 hover:scale-125 hover:text-purple-500" />, progress: 50 },
-    { name: 'GitHub', icon: <FaGithub size={20} className="text-black transition-transform duration-300 hover:scale-125 hover:text-gray-700" />, progress: 85 }, 
+    { name: 'HTML 5', icon: <FaHtml5 size={20} className="text-orange-600 transition-transform duration-300" />, progress: 90 },
+    { name: 'CSS 3', icon: <FaCss3Alt size={20} className="text-blue-600 transition-transform duration-300" />, progress: 80 },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss size={20} className="text-blue-400 transition-transform duration-300" />, progress: 80 },
+    { name: 'React', icon: <FaReact size={20} className="text-blue-300 transition-transform duration-300" />, progress: 60 },
+    { name: 'JavaScript', icon: <FaJsSquare size={20} className="text-yellow-400 transition-transform duration-300" />, progress: 60 },
+    { name: 'Figma', icon: <FaFigma size={20} className="text-pink-600 transition-transform duration-300" />, progress: 90 },
+    { name: 'Adobe Photoshop', icon: <SiAdobe size={20} className="text-red-500 transition-transform duration-300" />, progress: 60 },
+    { name: 'Node.js', icon: <SiNodedotjs size={20} className="text-green-600 transition-transform duration-300" />, progress: 60 }, 
+    { name: 'MongoDB', icon: <SiMongodb size={20} className="text-green-500 transition-transform duration-300" />, progress: 40 },  
+    { name: 'Database', icon: <SiMysql size={20} className="text-blue-500 transition-transform duration-300" />, progress: 30 },    
+    { name: 'Mobile Development', icon: <FaMobileAlt size={20} className="text-purple-600 transition-transform duration-300" />, progress: 50 },
+    { name: 'GitHub', icon: <FaGithub size={20} className="text-black transition-transform duration-300" />, progress: 85 }, 
   ];
 
   return (
@@ -27,8 +27,15 @@ const SkillsDisplay = () => {
             name={skill.name}
             icon={skill.icon}
             progress={skill.progress}
-            className="text-sm"
-          />
+            className="text-sm group hover:scale-105 transition-all duration-300 hover:bg-gray-800 hover:shadow-lg"
+          >
+            <div className="w-full  bg-gray-300 rounded-full h-2 mt-2 group-hover:bg-gradient-to-r group-hover:from-yellow-500 group-hover:to-red-600">
+              <div
+                className={`bg-gradient-to-r from-yellow-400 to-red-500 h-2 rounded-full transition-all duration-500`}
+                style={{ width: `${skill.progress}%` }}
+              ></div>
+            </div>
+          </Card>
         ))}
       </div>
     </div>

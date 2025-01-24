@@ -1,120 +1,63 @@
-// import { useState } from 'react';
-// import { FaBars, FaTimes } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
+const Nav = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-// const Navbar = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
 
-//   return (
-//     <header className="bg-blue-950 text-white shadow-[0_4px_10px_rgba(0,0,0,0.4)] fixed top-0 left-0 right-0 w-full z-50">
-//       <nav className="flex items-center justify-between h-[70px] px-5 md:px-10">
-        
-//         <div className="text-2xl font-bold flex items-center space-x-2">
-          
-//           <a href="#home" className="text-white hover:text-green-400">
-//             (A)
-//           </a>
-//         </div>
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
-//         <div className="md:hidden">
-//           <button
-//             onClick={() => setIsMenuOpen(!isMenuOpen)}
-//             className="text-white focus:outline-none"
-//           >
-//             {isMenuOpen ? (
-//               <FaTimes className="text-2xl" />
-//             ) : (
-//               <FaBars className="text-2xl" />
-//             )}
-//           </button>
-//         </div>
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-//         <ul className="hidden md:flex space-x-6 md:space-x-12 text-lg">
-//           <li>
-//             <a
-//               href="#home"
-//               className="hover:text-red-500 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
-//             >
-//               HOME
-//             </a>
-//           </li>
-//           <li>
-//             <a
-//               href="#about"
-//               className="hover:text-red-500 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
-//             >
-//               ABOUT ME
-//             </a>
-//           </li>
-//           <li>
-//             <a
-//               href="#skills"
-//               className="hover:text-red-500 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
-//             >
-//               SKILLS
-//             </a>
-//           </li>
-//           <li>
-//             <a
-//               href="#contact"
-//               className="hover:text-red-500 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
-//             >
-//               CONTACT ME
-//             </a>
-//           </li>
-         
-//           <li>
-        
-//           </li>
-//         </ul>
-//       </nav>
+  return (
+    <nav
+      className={`fixed top-0 left-0 w-full py-4 flex justify-between items-center px-4 sm:px-8 z-20 transition-all duration-300 ${
+        isScrolled ? 'bg-black bg-opacity-80 shadow-lg' : 'bg-transparent'
+      }`}
+    >
+      <a href="/" className="
+ text-yellow-600 text-2xl text-center rounded-lg w-[150px] border border-yellow-600 sm:text-3xl font-bold bg-gradient-to-r from-yellow-500 to-red-500 text-transparent bg-clip-text">
+        ABBAS
+      </a>
 
-//       {isMenuOpen && (
-//         <ul className="flex flex-col items-center bg-blue-900 absolute top-[70px] left-0 right-0 py-4 space-y-4 shadow-[0_8px_20px_rgba(0,0,0,0.4)] md:hidden">
-//           <li>
-//             <a
-//               href="#home"
-//               className="hover:text-red-500 transition-all duration-300 ease-in-out"
-//               onClick={() => setIsMenuOpen(false)}
-//             >
-//               HOME
-//             </a>
-//           </li>
-//           <li>
-//             <a
-//               href="#about"
-//               className="hover:text-red-500 transition-all duration-300 ease-in-out"
-//               onClick={() => setIsMenuOpen(false)}
-//             >
-//               ABOUT ME
-//             </a>
-//           </li>
-//           <li>
-//             <a
-//               href="#skills"
-//               className="hover:text-red-500 transition-all duration-300 ease-in-out"
-//               onClick={() => setIsMenuOpen(false)}
-//             >
-//               SKILLS
-//             </a>
-//           </li>
-//           <li>
-//             <a
-//               href="#contact"
-//               className="hover:text-red-500 transition-all duration-300 ease-in-out"
-//               onClick={() => setIsMenuOpen(false)}
-//             >
-//               CONTACT ME
-//             </a>
-//           </li>
-       
-//           <li>
-        
-//           </li>
-//         </ul>
-//       )}
-//     </header>
-//   );
-// };
+      <div className="md:hidden">
+        {isMenuOpen ? (
+          <FaTimes className="text-2xl text-white cursor-pointer" onClick={toggleMenu} />
+        ) : (
+          <FaBars className="text-2xl text-white cursor-pointer" onClick={toggleMenu} />
+        )}
+      </div>
 
-// export default Navbar;
+      <div className="hidden md:flex space-x-6 lg:space-x-16 text-white">
+        <a href="#home" className="text-base sm:text-lg font-semibold hover:text-gray-400 transition-all duration-300">Home</a>
+        <a href="#about" className="text-base sm:text-lg font-semibold hover:text-gray-400 transition-all duration-300">About Me</a>
+        <a href="#skills" className="text-base sm:text-lg font-semibold hover:text-gray-400 transition-all duration-300">Skills</a>
+        <a href="#projects" className="text-base sm:text-lg font-semibold hover:text-gray-400 transition-all duration-300">Contact Me</a>
+        <a href="#contact" className="text-base sm:text-lg font-semibold bg-gradient-to-r from-yellow-500 to-red-500 hover:text-gray-400 bg-yellow-600 px-4 sm:px-5 py-1 rounded-lg transition-all duration-300">Hire Me</a>
+      </div>
+
+      {isMenuOpen && (
+        <div className="absolute top-0 left-0 w-full h-screen bg-black bg-opacity-90 flex flex-col justify-center items-center md:hidden">
+          <a href="#home" className="text-3xl text-white my-4" onClick={toggleMenu}>Home</a>
+          <a href="#about" className="text-3xl text-white my-4" onClick={toggleMenu}>About Me</a>
+          <a href="#skills" className="text-3xl text-white my-4" onClick={toggleMenu}>Skills</a>
+          <a href="#projects" className="text-3xl text-white my-4" onClick={toggleMenu}>Contact Me</a>
+          <a href="#contact" className="text-3xl text-white my-4" onClick={toggleMenu}>Hire Me</a>
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Nav;

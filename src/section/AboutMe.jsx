@@ -26,11 +26,11 @@ const AboutMe = () => {
 
           <div className="flex flex-col w-full md:w-2/3 bg-gray-800 p-6 sm:p-12 rounded-lg shadow-lg">
             <div className="flex justify-center md:justify-start space-x-4 border-b border-gray-600 pb-4 mb-4">
-              <a href="/education" className="text-yellow-500 font-semibold hover:underline">Education</a>
-              <a href="#experience" className="text-white hover:text-yellow-500 hover:underline">My project</a>
+              <a href="#project" className="text-yellow-500 font-semibold hover:underline">Project</a>
+              <a href="#education" className="text-white hover:text-yellow-500 hover:underline">Education</a>
             </div>
 
-            <div id="education" className="text-white">
+            <div className="text-white">
               <p className="leading-relaxed text-base sm:text-lg mb-6 text-gray-300">
                 Hi, I'm Abbas Omer Hassan Suliman, a passionate Full-Stack Developer from Sudan. With a strong focus on building dynamic and responsive web applications, I specialize in front-end development using React and TailwindCSS, while also working with back-end technologies like Node.js and MongoDB.
               </p>

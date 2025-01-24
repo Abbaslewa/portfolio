@@ -66,7 +66,7 @@ const ContactMe = () => {
             className="p-3 sm:p-4 h-28 sm:h-32 rounded-lg outline-none focus:ring-4 focus:ring-green-500 border-[1px] border-gray-600 bg-white/20 text-white placeholder-gray-300 transition-all duration-300 ease-in-out"
           ></textarea>
 
-          <button className="bg-gradient-to-r from-blue-950 to-blue-900 text-white p-3 sm:p-4 rounded-lg w-full text-base sm:text-lg font-semibold hover:from-blue-950 hover:to-blue-600 transition-colors duration-300 ease-in-out focus:ring-4 focus:ring-green-600 shadow-lg hover:shadow-xl hover:shadow-green-500/50">
+          <button className="bg-gradient-to-r from-yellow-600 to-red-700 text-white p-3 sm:p-4 rounded-lg w-full text-base sm:text-lg font-semibold hover:from-yellow-700 hover:to-yellow-600 transition-colors duration-300 ease-in-out focus:ring-4 focus:ring-green-600 shadow-lg hover:shadow-xl hover:shadow-yellow-500/50">
             Submit
           </button>
 
