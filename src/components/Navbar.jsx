@@ -52,7 +52,7 @@ const Nav = () => {
           <a href="#home" className="text-3xl text-white my-4" onClick={toggleMenu}>Home</a>
           <a href="#about" className="text-3xl text-white my-4" onClick={toggleMenu}>About Me</a>
           <a href="#skills" className="text-3xl text-white my-4" onClick={toggleMenu}>Skills</a>
-          <a href="#projects" className="text-3xl text-white my-4" onClick={toggleMenu}>Contact Me</a>
+          <a href="contact" className="text-3xl text-white my-4" onClick={toggleMenu}>Contact Me</a>
           <a href="#contact" className="text-3xl text-white my-4" onClick={toggleMenu}>Hire Me</a>
         </div>
       )}

@@ -7,7 +7,7 @@ const Project = () => {
     <section id="project" className="py-12 sm:px-4 lg:h-[90vh] sm:px-6 md:px-16 lg:px-24 bg-gray-700 text-white">
       <div className="text-center mb-40">
         <h2 className="text-2xl sm:text-3xl font-bold mt-10 text-white">
-          My <span className="text-yellow-700">Project</span>
+          My <span className="text-yellow-700 ">Project</span>
         </h2>
       </div>
 
@@ -35,6 +35,7 @@ const Project = () => {
             </a>
           </p>
         </div>
+        
 
         <div className="w-full md:w-1/3 bg-gray-900 rounded-lg shadow-lg p-7 hover:scale-105 hover:skew-y-3 transition-transform duration-300 bounce-twice">
           <h3 className="text-xl font-semibold text-yellow-600 mb-4 text-center">
